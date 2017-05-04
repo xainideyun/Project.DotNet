@@ -42,6 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\Amativeness.cs" />
+    <Compile Include="App_Code\Failing.cs" />
+    <Compile Include="App_Code\Man.cs" />
+    <Compile Include="App_Code\MyAction.cs" />
+    <Compile Include="App_Code\ObjStructure.cs" />
+    <Compile Include="App_Code\Person.cs" />
+    <Compile Include="App_Code\Success.cs" />
+    <Compile Include="App_Code\Woman.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
