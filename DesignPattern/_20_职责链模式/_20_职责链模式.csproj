@@ -42,14 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\CommonManager.cs" />
+    <Compile Include="App_Code\EnumHelper.cs" />
+    <Compile Include="App_Code\MajorManager.cs" />
+    <Compile Include="App_Code\Manager.cs" />
+    <Compile Include="App_Code\RequestType.cs" />
+    <Compile Include="App_Code\TopManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Code\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
