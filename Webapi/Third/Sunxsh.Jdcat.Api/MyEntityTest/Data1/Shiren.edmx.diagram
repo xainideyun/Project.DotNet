@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a7db6ee2e1fb477c88494eda6fa550ef" Name="Diagram1" >
+        <EntityTypeShape EntityType="Shiren.Poem" Width="1.5" PointX="6.5" PointY="2.625" />
+        <EntityTypeShape EntityType="Shiren.Poet" Width="1.5" PointX="9.125" PointY="2.625" />
+        <EntityTypeShape EntityType="Shiren.Meter" Width="1.5" PointX="3.5" PointY="2.375" />
+        <AssociationConnector Association="Shiren.MeterPoem" />
+        <AssociationConnector Association="Shiren.PoemPoet" />
+        <EntityTypeShape EntityType="Shiren.Album" Width="1.5" PointX="4.875" PointY="5.625" />
+        <EntityTypeShape EntityType="Shiren.Artist" Width="1.5" PointX="8.5" PointY="5.5" />
+        <AssociationConnector Association="Shiren.AlbumArtist" />
+        <EntityTypeShape EntityType="Shiren.Order" Width="1.5" PointX="3.5" PointY="8.875" />
+        <EntityTypeShape EntityType="Shiren.Item" Width="1.5" PointX="9.625" PointY="8.875" />
+        <EntityTypeShape EntityType="Shiren.OrderItem" Width="1.5" PointX="6.875" PointY="8.75" />
+        <AssociationConnector Association="Shiren.OrderOrderItem" />
+        <AssociationConnector Association="Shiren.ItemOrderItem" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

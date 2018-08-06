@@ -14,7 +14,7 @@ namespace _19_命令模式.App_Code
 
         public override void Execute()
         {
-            executer.ExecPhone(Name);
+            Executer.ExecPhone(Name);
         }
     }
 }

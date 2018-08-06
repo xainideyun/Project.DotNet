@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+@section scripts{
+
+    <script>
+        //window.onload = e => { console.log(e) };
+        var btn = document.querySelector("#btn");
+        btn.addEventListener("click", function (e) {
+            var name = "孙小双", uri = "http://www.sunxiaoshuang.com", url = "PostData";
+            url = addQueryStringArgs("name", name, url);
+            url = addQueryStringArgs("uri", uri, url);
+            console.log(url);
+            $.post(url, null, function (data) {
+                console.log(data);
+            });
+        });
+        function addQueryStringArgs(name, value, url) {
+            if (url.indexOf("?") > -1) {
+                url += "&";
+            } else {
+                url += "?";
+            }
+
+            url += encodeURIComponent(name) + "=" + encodeURIComponent(value);
+            return url;
+        }
+    </script>
+
+}
+
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<p>Use this area to provide additional information.</p>
+
+<button id="btn" class="btn btn-default">确定</button>

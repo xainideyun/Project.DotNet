@@ -9,11 +9,12 @@ namespace _19_命令模式.App_Code
     public abstract class Command
     {
         public string Name { get; set; }
-        protected Executer executer;
-        public Command(string name, Executer executer)
+        protected Executer Executer;
+
+        protected Command(string name, Executer executer)
         {
             this.Name = name;
-            this.executer = executer;
+            this.Executer = executer;
         }
         public abstract void Execute();
     }

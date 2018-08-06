@@ -47,6 +47,11 @@
     <Compile Include="App_Code\MarrayCommand.cs" />
     <Compile Include="App_Code\PhoneCommand.cs" />
     <Compile Include="App_Code\Recorder.cs" />
+    <Compile Include="Code\ChaofanCommand.cs" />
+    <Compile Include="Code\Chushi.cs" />
+    <Compile Include="Code\Command.cs" />
+    <Compile Include="Code\Gongbaojiding.cs" />
+    <Compile Include="Code\Waiter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

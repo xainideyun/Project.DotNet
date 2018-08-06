@@ -8,19 +8,19 @@ namespace _19_命令模式.App_Code
 {
     public class Recorder
     {
-        private IList<Command> list = new List<Command>();
+        private readonly IList<Command> _list = new List<Command>();
         public void SetOrder(Command command)
         {
-            list.Add(command);
+            _list.Add(command);
         }
         public void CancleOrder(Command command)
         {
-            list.Remove(command);
+            _list.Remove(command);
             Console.WriteLine($"客户{command.Name}取消业务办理！");
         }
         public void Notify()
         {
-            foreach (var item in list)
+            foreach (var item in _list)
             {
                 item.Execute();
             }

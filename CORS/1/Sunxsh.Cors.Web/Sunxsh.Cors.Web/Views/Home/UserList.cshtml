@@ -1,0 +1,106 @@
+﻿@model Sunxsh.Cors.Models.T_User
+
+@{
+    ViewBag.Title = "title";
+    //    Layout = "~/Views/Shared/_Layout";
+}
+
+<h2>@ViewBag.Title</h2>
+<div class="container">
+
+    <div class="row" id="table">
+        <div class="panel panel-primary">
+            <div class="panel-heading">用户表格：</div>
+            <div class="panel-body">
+                <form action="javascript:void(0)" method="POST" class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <legend>添加</legend>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">姓名：</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" v-model="name" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">年龄：</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" v-model="age" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">编码：</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" v-model="code" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-10 col-sm-offset-2">
+                            <div class="btn-group">
+                                <button type="submit" class="btn btn-primary" v-on:click="submit()">提交</button>
+                                <button class="btn btn-warning" v-on:click="send()">发送订单</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>姓名</th>
+                        <th>年龄</th>
+                        <th>编号</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(obj, index) in list">
+                        <td>{{index + 1}}</td>
+                        <td>{{obj.Name}}</td>
+                        <td>{{obj.Age}}</td>
+                        <td>{{obj.Code}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    <script>
+        new Vue({
+            el: '#table',
+            data: {
+                list: null,
+                name: null,
+                age: 0,
+                code: null,
+                url: "http://localhost:6003/api/user"
+            },
+            methods: {
+                load: function() {
+                    var self = this;
+                    $.get(this.url,
+                        null,
+                        function(data) {
+                            self.list = data;
+                        });
+                },
+                submit: function() {
+                    var self = this;
+                    $.post(this.url,
+                        { Name: this.name, Age: this.age, Code: this.code },
+                        function(data) {
+                            self.list.push(data);
+                        });
+                },
+                send: function() {
+                    $.post("http://localhost:6003/api/test", null, function(data) {
+                        
+                    });
+                }
+            }
+        }).load();
+
+    </script>
+}
